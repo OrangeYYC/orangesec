@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Orange Sec - Write Up</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+</head>
+<body>
+  <script>
+    window.$docsify = {
+
+    }
+  </script>
+
+  <div id="app"></div>
+  <script src="//cdn.jsdelivr.net/npm/docsify-plugin-carbon@1"></script>
+  <script>
+    window.$docsify = {
+      auto2top: true,
+      coverpage: false,
+      executeScript: false,
+      loadSidebar: true,
+      loadNavbar: false,
+      mergeNavbar: false,
+      maxLevel: 4,
+      subMaxLevel: 2,
+      repo: 'https://github.com/OrangeYYC/orangesec',
+      name: 'Write Up',
+      nameLink: {
+        '/es/': '#/es/',
+        '/de-de/': '#/de-de/',
+        '/ru-ru/': '#/ru-ru/',
+        '/zh-cn/': '#/zh-cn/',
+        '/': '#/',
+      },
+      search: {
+        noData: {
+          '/es/': '¡No hay resultados!',
+          '/de-de/': 'Keine Ergebnisse!',
+          '/ru-ru/': 'Никаких результатов!',
+          '/zh-cn/': '没有结果!',
+          '/': 'No results!',
+        },
+        paths: 'auto',
+        placeholder: {
+          '/es/': 'Buscar',
+          '/de-de/': 'Suche',
+          '/ru-ru/': 'Поиск',
+          '/zh-cn/': '搜索',
+          '/': 'Search',
+        },
+        pathNamespaces: ['/es', '/de-de', '/ru-ru', '/zh-cn'],
+      },
+      vueComponents: {
+        'button-counter': {
+          template:
+                  '<button @click="count += 1">You clicked me {{ count }} times</button>',
+          data: function () {
+            return {
+              count: 0,
+            };
+          },
+        },
+      },
+      vueGlobalOptions: {
+        data: function () {
+          return {
+            count: 0,
+            message: 'Hello, World!',
+            images: [
+              { title: 'Image 1', url: 'https://picsum.photos/150?random=1' },
+              { title: 'Image 2', url: 'https://picsum.photos/150?random=2' },
+              { title: 'Image 3', url: 'https://picsum.photos/150?random=3' },
+            ],
+          };
+        },
+        computed: {
+          timeOfDay: function () {
+            const date = new Date();
+            const hours = date.getHours();
+
+            if (hours < 12) {
+              return 'morning';
+            } else if (hours < 18) {
+              return 'afternoon';
+            } else {
+              return 'evening';
+            }
+          },
+        },
+        methods: {
+          hello: function () {
+            alert(this.message);
+          },
+        },
+      },
+      vueMounts: {
+        '#counter': {
+          data: function () {
+            return {
+              count: 0,
+            };
+          },
+        },
+      }
+    };
+  </script>
+
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-markdown.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-nginx.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
+</body>
+</html>
